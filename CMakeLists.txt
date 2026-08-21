@@ -13,6 +13,8 @@ find_package(geometry_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/StateBlock.msg"
   "msg/JointCovariance.msg"
+  "msg/ScoredViewpoint.msg"
+  "msg/ScoredViewpointArray.msg"
   DEPENDENCIES std_msgs geometry_msgs
 )
 

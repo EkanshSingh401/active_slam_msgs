@@ -15,6 +15,11 @@
 
 std_msgs/Header header      # stamp matches the OpenVINS state timestamp
 
+# Which point of OpenVINS's update this snapshot is from (PATCHES s62):
+# "" or "post" = after the full update (the normal publication); with
+# joint_cov_stages also "propagated", "msckf", "slam", "init" (diagnostic).
+string stage
+
 int32 dim                   # covariance is dim x dim
 float64[] covariance        # row-major, length dim*dim
 

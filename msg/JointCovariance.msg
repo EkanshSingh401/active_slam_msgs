@@ -35,3 +35,12 @@ bool includes_calibration
 
 int32 num_clones
 int32 num_slam_features
+
+# --- linearization point (PATCHES s60) ---
+# The means the covariance above is about, so a consumer can build measurement
+# Jacobians at the estimator's own linearization point from one message.
+bool state_uses_fej            # OpenVINS use_fej: Jacobians are taken at *_fej
+PoseLinearization imu_pose
+PoseLinearization[] clone_poses        # same order as the clone blocks
+LandmarkLinearization[] landmarks      # same order as the slam_feature blocks
+CameraCalibration[] cameras
